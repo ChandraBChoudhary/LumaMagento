@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [Suite]]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)(failed)">
+    <classes>
+      <class name="lumaTestCases.Registration">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="launchTheURL"/>
+          <include name="registerUser"/>
+        </methods>
+      </class> <!-- lumaTestCases.Registration -->
+      <class name="lumaTestCases.Login">
+        <methods>
+          <include name="launchTheURL"/>
+          <include name="Login003_valiDEmail_InvalidPass"/>
+          <include name="Login007_loginWithOnlyPassword"/>
+          <include name="Login006_loginWithOnlyEmail"/>
+          <include name="Login004_invaliDEmail_validPassword"/>
+          <include name="Login002_LoginWithInvalidCredentials"/>
+          <include name="closeDriver"/>
+          <include name="Login001_LoginWithValidCredentials"/>
+          <include name="Login005_loginWithoutEmailAndPAssword"/>
+        </methods>
+      </class> <!-- lumaTestCases.Login -->
+    </classes>
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->
