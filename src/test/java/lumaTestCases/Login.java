@@ -18,8 +18,8 @@ public class Login extends Base{
 	Base base = new Base();
 	WebDriver driver;
 	
-	public Login() {
-		super();
+	public Login() throws IOException {
+		//super();
 	}
 	@AfterMethod
 	public void closeDriver() {
@@ -28,17 +28,12 @@ public class Login extends Base{
 	
 	@BeforeMethod
 	public void launchTheURL() throws IOException {
-		
-//		readPropertiesFile();
-		
 		driver = base.launchTheBrowserAndApplication(testData.getProperty("browser"));
 		
 	}
 	
 	@Test(priority = 1)
 	public void Login001_LoginWithValidCredentials() throws IOException, Exception {
-		
-		
 		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
         driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
         driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));

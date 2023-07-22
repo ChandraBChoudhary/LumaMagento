@@ -5,6 +5,8 @@
     <classes>
 		<class name="lumaTestCases.Registration"/>
       	<class name="lumaTestCases.Login"/>
+      	<class name="lumaTestCases.SearchProduct"/>
+      	
       
     </classes>
   </test> <!-- Test -->

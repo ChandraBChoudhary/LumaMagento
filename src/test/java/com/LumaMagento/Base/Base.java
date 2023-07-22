@@ -3,8 +3,11 @@ package com.LumaMagento.Base;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 import java.io.OutputStream;
@@ -18,19 +21,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
+
+import lumaTestCases.LocatorPages;
 import net.sourceforge.tess4j.*;
 
-public class Base {
-	WebDriver driver ;
+public class Base extends LocatorPages{
+	public WebDriver driver ;
 	public Properties prop = new Properties();
-	public Properties testData;
-	
+	public Properties testData = new Properties();
+	File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
+	File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");
+
 
 public Base() {
 		
-		
 	
-		File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
+
+//		File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
 		try {
 			FileInputStream inputFile = new FileInputStream(propFile);
 			prop.load(inputFile);
@@ -42,8 +49,8 @@ public Base() {
 		}
 		
 		
-		testData = new Properties();
-		File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");
+		//testData = new Properties();
+//		File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");
 		
 		try {
 			FileInputStream testFile = new FileInputStream(testDataFile);
@@ -54,32 +61,40 @@ public Base() {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+}
+	
 		
-//		// Generating email address
-//		Random random = new Random();
-//		int random_number = random.nextInt(100);
-//	    String newEmail = "chand199809+" + random_number + "@yopmail.com";
-//	    System.out.println(newEmail);
-//
-//	    try {
-//	        Properties properties = new Properties();
-//	        properties.setProperty("newUserEmailAddress", newEmail);
-//
-//	        String filePath = "C:\\Users\\chandrabl\\Desktop\\Personal\\MCA Project Work\\LumaMagento\\src\\main\\java\\com\\LumaMagento\\config\\config.properties";
-//	        OutputStream output = new FileOutputStream(filePath);
-//
-//	        // Save the properties to the output stream
-//	        properties.store(output, "Email updated in properties file successfully");
-//	        output.close();
-//	    } catch (IOException e) {
-//	        e.printStackTrace();
-//	        System.out.println("Failed to update email");
-//	    }
+			public void addTimestampToEmail() throws IOException {
 
-	}
-	
-	
-	
+				Date date =new Date();
+				String timestamp = date.toString().replace(" ","").replace(":","");
+			    Random random = new Random();
+		         //Generate a random integer between 1 and 10
+		        int random_number = random.nextInt(100)+1;
+			    String NewEmail = "Chan+" + random_number + timestamp + random_number+ "@yopmail.com";
+			    System.out.println(NewEmail);
+			     
+			    
+			    //Writing to properties file
+			        prop.setProperty("newUserEmailAddress", NewEmail);
+			        String filePath = "C:\\Users\\chandrabl\\Desktop\\Personal\\MCA Project Work\\LumaMagento\\src\\main\\java\\com\\LumaMagento\\config\\config.properties";
+			        //Saving properties to a file
+			        OutputStream output = new FileOutputStream(filePath);
+				        prop.store(output, "Email updated in properties file successfully");
+				        output.close();
+				       //Refreshing the config.properties file
+				        try (FileInputStream input = new FileInputStream(filePath)) {
+				            prop.load(input);
+				            output.close();
+				       // Now you have the updated data in the 'properties' object
+				     
+				        } catch (IOException e) {
+				            e.printStackTrace();
+				            System.out.println("Failed to read properties.");
+				        }	
+			        
+			}	  
+
 	
 	public WebDriver launchTheBrowserAndApplication(String browserName) {
 		
@@ -138,31 +153,13 @@ public Base() {
 	    resizedImage.createGraphics().drawImage(image, 0, 0, newWidth, newHeight, null);
 	    return resizedImage;
 	}
+
 	
-	public void addTimestampToEmail() throws IOException {
-	    //Date date = new Date();
-	    //String timestamp = date.toString();
-	//replace(" ", "_").replace(":", "_");
-	    Random random = new Random();
-        
-        // Generate a random integer between 1 and 10
-        int random_number = random.nextInt(100);
-	    String newEmail = "chand199809+" + random_number + "@yopmail.com";
-	    System.out.println(newEmail);
-
-	    
-	        Properties properties = new Properties();
-	        properties.setProperty("newUserEmailAddress", newEmail);
-
-	        String filePath = "C:\\Users\\chandrabl\\Desktop\\Personal\\MCA Project Work\\LumaMagento\\src\\main\\java\\com\\LumaMagento\\config\\config.properties";
-	        OutputStream output = new FileOutputStream(filePath);
-
-	        // Save the properties to the output stream
-	        properties.store(output, "Email updated in properties file successfully");
-	        //output.close();
-	  
-
-	}
-	
-	
+public void loginToApplication() throws InterruptedException {
+	driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
+    driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
+    driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
+    driver.findElement(By.xpath(LocatorPages.signInButton)).click();
+    Waits.waitFor2seconds();
+}
 }
