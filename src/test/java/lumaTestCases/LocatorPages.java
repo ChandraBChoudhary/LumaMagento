@@ -48,6 +48,15 @@ public class LocatorPages{
 	 protected static String searchResultValidation = "(//span[@class='base'][contains(text(), 'Search results')])";
 	  protected static String invalidSearchResultValidation = "(//*[contains(text(), 'no results')])";
 	 
+	  
+	  //Women Category Navigation
+	  protected static String womenCategory = "//*[@id='ui-id-4']";
+	  protected static String womenCategoryValidation = "//*[@id='page-title-heading']";
+	  protected static String womenCategoryTops = "(//a[@id='ui-id-9']/span[text()='Tops'])";
+	  protected static String womenJacketSubCat	= "(//a[@class='ui-corner-all']/span[text()='Jackets'])[1]";
+	  protected static String womenHoodiesSubCat = "(//a[@class='ui-corner-all']/span[text()='Hoodies & Sweatshirts'])[1]";
+	  protected static String womenTeesSubCat = "(//a[@class='ui-corner-all']/span[text()='Tees'])[1]";
+	  protected static String womenBrasSubCat = "(//a[@class='ui-corner-all']/span[text()='Bras & Tanks'])[1]";
 	}
 	
 	

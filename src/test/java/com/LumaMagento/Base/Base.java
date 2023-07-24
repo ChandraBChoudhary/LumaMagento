@@ -20,6 +20,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 
 import lumaTestCases.LocatorPages;
@@ -162,4 +163,17 @@ public void loginToApplication() throws InterruptedException {
     driver.findElement(By.xpath(LocatorPages.signInButton)).click();
     Waits.waitFor2seconds();
 }
+
+public void testHoverElement(String elementToHever) {
+    // Find the element you want to hover over
+    WebElement ElementToHover = driver.findElement(By.xpath(elementToHever)); 
+    
+    // Create an instance of the Actions class and perform the hover action
+    Actions actions = new Actions(driver);
+    actions.moveToElement(ElementToHover).build().perform();
+
+    // You can add additional actions after the hover if needed, like clicking on a sub-element that appears on hover.
+    // Example: actions.click(subElement).build().perform();
+}
+
 }
