@@ -12,11 +12,33 @@
       </class> <!-- lumaTestCases.Login -->
       <class name="lumaTestCases.Registration">
         <methods>
+          <include name="Register007_validatePasswordCritera"/>
           <include name="closeDriver"/>
+          <include name="Register006_validateWeakPasswordAndRegister"/>
           <include name="launchTheURL"/>
           <include name="Regsiter001_registerUser"/>
+          <include name="Register008_confirmPasswordDoesNotMatchPassword"/>
         </methods>
       </class> <!-- lumaTestCases.Registration -->
+      <class name="lumaTestCases.SearchProduct">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="Search002_InvalidSearchProduct"/>
+          <include name="Search001_SearchByProduct"/>
+          <include name="launchTheURL"/>
+        </methods>
+      </class> <!-- lumaTestCases.SearchProduct -->
+      <class name="lumaTestCases.Category">
+        <methods>
+          <include name="Category002_verifyWomenTopsCategoryAvailability"/>
+          <include name="Category003_verifyWomenBottomsCategoryAvailability"/>
+          <include name="Category001_NavigateToWomenCategory"/>
+          <include name="Category004_verifyMenBottomsCategoryAvailability"/>
+          <include name="launchTheURL"/>
+          <include name="Category002_verifyMenTopsCategoryAvailability"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- lumaTestCases.Category -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

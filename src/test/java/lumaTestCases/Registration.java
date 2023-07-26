@@ -12,12 +12,16 @@ import com.LumaMagento.Base.Base;
 import com.LumaMagento.Base.Waits;
 
 public class Registration extends Base{
+	
+	public Registration() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	Base base;
 	WebDriver driver;
 	
-public Registration() {
-	
-}
+
 	@AfterMethod
 	public void closeDriver() {
 		driver.quit();
@@ -34,6 +38,8 @@ public Registration() {
 	@Test(priority = 7)
 	public void Regsiter001_registerUser() throws InterruptedException, IOException {
 		base.addTimestampToEmail();
+		//base.readConfigFile();
+		System.out.println("Email being printed from property file : " + prop.getProperty("newUserEmailAddress"));
 		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
 		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
 		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));

@@ -34,6 +34,7 @@ public class Login extends Base{
 	
 	@Test(priority = 1)
 	public void Login001_LoginWithValidCredentials() throws IOException, Exception {
+		//base.readConfigFile();
 		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
         driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
         driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));

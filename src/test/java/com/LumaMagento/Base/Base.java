@@ -3,7 +3,6 @@ package com.LumaMagento.Base;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,39 +29,27 @@ public class Base extends LocatorPages{
 	public WebDriver driver ;
 	public Properties prop = new Properties();
 	public Properties testData = new Properties();
-	File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
-	File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");
-
-
-public Base() {
-		
 	
 
-//		File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
-		try {
-			FileInputStream inputFile = new FileInputStream(propFile);
-			prop.load(inputFile);
-			inputFile.close();
-		} 
-		catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		//testData = new Properties();
-//		File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");
-		
-		try {
+
+public Base() throws IOException {
+			File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");		
 			FileInputStream testFile = new FileInputStream(testDataFile);
 			testData.load(testFile);
 			testFile.close();
-		}
-		catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
+			FileInputStream inputFile = new FileInputStream(propFile);
+			prop.load(inputFile);
+			inputFile.close();		
+			
 }
+
+//	public void readConfigFile() throws IOException {
+//		File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
+//		FileInputStream inputFile = new FileInputStream(propFile);
+//		prop.load(inputFile);
+//		//inputFile.close();
+//	}
 	
 		
 			public void addTimestampToEmail() throws IOException {
@@ -75,24 +62,16 @@ public Base() {
 			    String NewEmail = "Chan+" + random_number + timestamp + random_number+ "@yopmail.com";
 			    System.out.println(NewEmail);
 			     
-			    
+			    Properties prop1 = new Properties();
 			    //Writing to properties file
-			        prop.setProperty("newUserEmailAddress", NewEmail);
-			        String filePath = "C:\\Users\\chandrabl\\Desktop\\Personal\\MCA Project Work\\LumaMagento\\src\\main\\java\\com\\LumaMagento\\config\\config.properties";
+			    prop1.setProperty("newUserEmailAddress", NewEmail);
+			        File filePath = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
 			        //Saving properties to a file
 			        OutputStream output = new FileOutputStream(filePath);
-				        prop.store(output, "Email updated in properties file successfully");
+			        prop1.store(output, "Email updated in properties file successfully");
 				        output.close();
 				       //Refreshing the config.properties file
-				        try (FileInputStream input = new FileInputStream(filePath)) {
-				            prop.load(input);
-				            output.close();
-				       // Now you have the updated data in the 'properties' object
-				     
-				        } catch (IOException e) {
-				            e.printStackTrace();
-				            System.out.println("Failed to read properties.");
-				        }	
+				        
 			        
 			}	  
 

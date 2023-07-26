@@ -51,12 +51,27 @@ public class LocatorPages{
 	  
 	  //Women Category Navigation
 	  protected static String womenCategory = "//*[@id='ui-id-4']";
-	  protected static String womenCategoryValidation = "//*[@id='page-title-heading']";
+	  protected static String womenCategoryValidation = "(//*[@class='base'][text()='Women'])";
 	  protected static String womenCategoryTops = "(//a[@id='ui-id-9']/span[text()='Tops'])";
 	  protected static String womenJacketSubCat	= "(//a[@class='ui-corner-all']/span[text()='Jackets'])[1]";
 	  protected static String womenHoodiesSubCat = "(//a[@class='ui-corner-all']/span[text()='Hoodies & Sweatshirts'])[1]";
 	  protected static String womenTeesSubCat = "(//a[@class='ui-corner-all']/span[text()='Tees'])[1]";
 	  protected static String womenBrasSubCat = "(//a[@class='ui-corner-all']/span[text()='Bras & Tanks'])[1]";
+	  protected static String womenCategoryBottoms = "(//a[@id='ui-id-10']/span[text()='Bottoms'])";
+	  protected static String womenPantsSubCategory = "(//a[@class='ui-corner-all']/span[text()='Pants'])[1]";
+	  protected static String womenShortsSubCat = "(//a[@class='ui-corner-all']/span[text()='Shorts'])[1]";
+	  
+	  //Men Category 
+	  protected static String menCategory = "//*[@id='ui-id-5']";
+	  protected static String menCategoryValidation = "(//*[@class='base'][text()='Men'])";
+	  protected static String menCategoryTops = "(//a[@id='ui-id-17']/span[text()='Tops'])";
+	  protected static String menJacketSubCat	= "(//a[@class='ui-corner-all']/span[text()='Jackets'])[2]";
+	  protected static String menHoodiesSubCat = "(//a[@class='ui-corner-all']/span[text()='Hoodies & Sweatshirts'])[2]";
+	  protected static String menTeesSubCat = "(//a[@class='ui-corner-all']/span[text()='Tees'])[2]";
+	  protected static String menTanksSubCat = "(//a[@class='ui-corner-all']/span[text()='Tanks'])";
+	  protected static String menCategoryBottoms = "(//a[@id='ui-id-18']/span[text()='Bottoms'])";
+	  protected static String menPantsSubCategory = "(//a[@class='ui-corner-all']/span[text()='Pants'])[2]";
+	  protected static String menShortsSubCat = "(//a[@class='ui-corner-all']/span[text()='Shorts'])[2]";
 	}
 	
 	
