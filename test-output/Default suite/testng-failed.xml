@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lumaTestCases.Registration">
+      <class name="lumaTestCases.Category">
         <methods>
-          <include name="closeDriver"/>
+          <include name="Category005_verifyMenBottomsCategoryAvailability"/>
           <include name="launchTheURL"/>
-          <include name="Regsiter001_registerUser"/>
+          <include name="closeDriver"/>
+          <include name="Category004_verifyMenTopsCategoryAvailability"/>
         </methods>
-      </class> <!-- lumaTestCases.Registration -->
+      </class> <!-- lumaTestCases.Category -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

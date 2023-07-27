@@ -14,7 +14,9 @@ import com.LumaMagento.Base.Waits;
 public class Registration extends Base{
 	
 	public Registration() throws IOException {
+		
 		super();
+		
 		// TODO Auto-generated constructor stub
 	}
 
@@ -38,7 +40,7 @@ public class Registration extends Base{
 	@Test(priority = 7)
 	public void Regsiter001_registerUser() throws InterruptedException, IOException {
 		base.addTimestampToEmail();
-		//base.readConfigFile();
+//		base.readConfigFile();
 		System.out.println("Email being printed from property file : " + prop.getProperty("newUserEmailAddress"));
 		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
 		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());

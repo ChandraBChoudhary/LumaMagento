@@ -57,7 +57,7 @@ public class LocatorPages{
 	  protected static String womenHoodiesSubCat = "(//a[@class='ui-corner-all']/span[text()='Hoodies & Sweatshirts'])[1]";
 	  protected static String womenTeesSubCat = "(//a[@class='ui-corner-all']/span[text()='Tees'])[1]";
 	  protected static String womenBrasSubCat = "(//a[@class='ui-corner-all']/span[text()='Bras & Tanks'])[1]";
-	  protected static String womenCategoryBottoms = "(//a[@id='ui-id-10']/span[text()='Bottoms'])";
+	  protected static String womenCategoryBottoms = "(//a[@class='ui-corner-all']/span[text()='Bottoms'])";
 	  protected static String womenPantsSubCategory = "(//a[@class='ui-corner-all']/span[text()='Pants'])[1]";
 	  protected static String womenShortsSubCat = "(//a[@class='ui-corner-all']/span[text()='Shorts'])[1]";
 	  
@@ -72,6 +72,20 @@ public class LocatorPages{
 	  protected static String menCategoryBottoms = "(//a[@id='ui-id-18']/span[text()='Bottoms'])";
 	  protected static String menPantsSubCategory = "(//a[@class='ui-corner-all']/span[text()='Pants'])[2]";
 	  protected static String menShortsSubCat = "(//a[@class='ui-corner-all']/span[text()='Shorts'])[2]";
+	  
+	  //Gear Category
+	  protected static String gearCategory = "//*[@id='ui-id-6']";
+	  protected static String gearCategoryValidation = "(//*[@class='base'][text()='Gear'])";
+	  protected static String gearCategoryBags = "(//a[@class='ui-corner-all']/span[text()='Bags'])";
+	  protected static String gearCategoryFitnessEquipment = "(//a[@class='ui-corner-all']/span[text()='Fitness Equipment'])";
+	  protected static String gearCategoryWatches = "(//a[@class='ui-corner-all']/span[text()='Watches'])";
+	  
+	  //Training
+	  protected static String trainingCategory = "//*[@id='ui-id-7']";
+	  protected static String trainingCategoryValidation = "(//*[@class='base'][text()='Training'])";
+	  protected static String learningsTrainingVideo = "(//a[@class='ui-corner-all']/span[text()='Video Download'])";
+	  
+	  
 	}
 	
 	

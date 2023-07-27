@@ -1,25 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="23" passed="22" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-26T23:46:57 IST" name="Default suite" finished-at="2023-07-26T23:47:14 IST" duration-ms="17655">
+  <suite started-at="2023-07-28T00:41:34 IST" name="Suite" finished-at="2023-07-28T00:46:11 IST" duration-ms="277488">
     <groups>
     </groups>
-    <test started-at="2023-07-26T23:46:57 IST" name="Default test" finished-at="2023-07-26T23:47:14 IST" duration-ms="17655">
+    <test started-at="2023-07-28T00:41:34 IST" name="Test" finished-at="2023-07-28T00:46:11 IST" duration-ms="277488">
       <class name="lumaTestCases.Registration">
-        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@7cc0cdad]" started-at="2023-07-26T23:46:57 IST" name="launchTheURL" finished-at="2023-07-26T23:47:06 IST" duration-ms="9591" status="PASS">
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:41:34 IST" name="launchTheURL" finished-at="2023-07-28T00:41:45 IST" duration-ms="10981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchTheURL -->
-        <test-method signature="Regsiter001_registerUser()[pri:7, instance:lumaTestCases.Registration@7cc0cdad]" started-at="2023-07-26T23:47:06 IST" name="Regsiter001_registerUser" finished-at="2023-07-26T23:47:14 IST" duration-ms="7775" status="PASS">
+        <test-method signature="Register002_createAccountwithoutdata()[pri:1, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:41:45 IST" name="Register002_createAccountwithoutdata" finished-at="2023-07-28T00:41:49 IST" duration-ms="4076" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register002_createAccountwithoutdata -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:41:49 IST" name="closeDriver" finished-at="2023-07-28T00:41:49 IST" duration-ms="263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:41:49 IST" name="launchTheURL" finished-at="2023-07-28T00:41:57 IST" duration-ms="7837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Register003_registerExistingUser()[pri:2, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:41:57 IST" name="Register003_registerExistingUser" finished-at="2023-07-28T00:42:03 IST" duration-ms="6568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register003_registerExistingUser -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:03 IST" name="closeDriver" finished-at="2023-07-28T00:42:04 IST" duration-ms="239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:04 IST" name="launchTheURL" finished-at="2023-07-28T00:42:12 IST" duration-ms="8002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Register005_validateStrongPassword()[pri:3, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:12 IST" name="Register005_validateStrongPassword" finished-at="2023-07-28T00:42:13 IST" duration-ms="1440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register005_validateStrongPassword -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:13 IST" name="closeDriver" finished-at="2023-07-28T00:42:13 IST" duration-ms="249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:13 IST" name="launchTheURL" finished-at="2023-07-28T00:42:21 IST" duration-ms="7913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Register006_validateWeakPasswordAndRegister()[pri:4, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:21 IST" name="Register006_validateWeakPasswordAndRegister" finished-at="2023-07-28T00:42:24 IST" duration-ms="2171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register006_validateWeakPasswordAndRegister -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:24 IST" name="closeDriver" finished-at="2023-07-28T00:42:24 IST" duration-ms="187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:24 IST" name="launchTheURL" finished-at="2023-07-28T00:42:32 IST" duration-ms="8084" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Register007_validatePasswordCritera()[pri:5, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:32 IST" name="Register007_validatePasswordCritera" finished-at="2023-07-28T00:42:34 IST" duration-ms="1906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register007_validatePasswordCritera -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:34 IST" name="closeDriver" finished-at="2023-07-28T00:42:34 IST" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:34 IST" name="launchTheURL" finished-at="2023-07-28T00:42:42 IST" duration-ms="8247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Register008_confirmPasswordDoesNotMatchPassword()[pri:6, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:42 IST" name="Register008_confirmPasswordDoesNotMatchPassword" finished-at="2023-07-28T00:42:44 IST" duration-ms="1844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register008_confirmPasswordDoesNotMatchPassword -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:44 IST" name="closeDriver" finished-at="2023-07-28T00:42:44 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:44 IST" name="launchTheURL" finished-at="2023-07-28T00:42:52 IST" duration-ms="8070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Regsiter001_registerUser()[pri:7, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:42:52 IST" name="Regsiter001_registerUser" finished-at="2023-07-28T00:43:00 IST" duration-ms="7876" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Regsiter001_registerUser -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@7cc0cdad]" started-at="2023-07-26T23:47:14 IST" name="closeDriver" finished-at="2023-07-26T23:47:14 IST" duration-ms="243" status="PASS">
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Registration@5656be13]" started-at="2023-07-28T00:43:00 IST" name="closeDriver" finished-at="2023-07-28T00:43:00 IST" duration-ms="235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
       </class> <!-- lumaTestCases.Registration -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="lumaTestCases.SearchProduct">
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:43:56 IST" name="launchTheURL" finished-at="2023-07-28T00:44:06 IST" duration-ms="9775" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Search001_SearchByProduct()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:44:06 IST" name="Search001_SearchByProduct" finished-at="2023-07-28T00:44:10 IST" duration-ms="4728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Search001_SearchByProduct -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:44:10 IST" name="closeDriver" finished-at="2023-07-28T00:44:11 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:44:11 IST" name="launchTheURL" finished-at="2023-07-28T00:44:20 IST" duration-ms="9539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Search002_InvalidSearchProduct()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:44:20 IST" name="Search002_InvalidSearchProduct" finished-at="2023-07-28T00:44:25 IST" duration-ms="4354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Search002_InvalidSearchProduct -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.SearchProduct@38425407]" started-at="2023-07-28T00:44:25 IST" name="closeDriver" finished-at="2023-07-28T00:44:25 IST" duration-ms="259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- lumaTestCases.SearchProduct -->
+      <class name="lumaTestCases.Category">
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:25 IST" name="launchTheURL" finished-at="2023-07-28T00:44:38 IST" duration-ms="13525" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category001_NavigateToWomenCategory()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:38 IST" name="Category001_NavigateToWomenCategory" finished-at="2023-07-28T00:44:44 IST" duration-ms="5885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category001_NavigateToWomenCategory -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:44 IST" name="closeDriver" finished-at="2023-07-28T00:44:44 IST" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:44 IST" name="launchTheURL" finished-at="2023-07-28T00:44:57 IST" duration-ms="12934" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category002_verifyWomenTopsCategoryAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:57 IST" name="Category002_verifyWomenTopsCategoryAvailability" finished-at="2023-07-28T00:44:58 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category002_verifyWomenTopsCategoryAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:58 IST" name="closeDriver" finished-at="2023-07-28T00:44:58 IST" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:44:58 IST" name="launchTheURL" finished-at="2023-07-28T00:45:12 IST" duration-ms="14006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category003_verifyWomenBottomsCategoryAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:12 IST" name="Category003_verifyWomenBottomsCategoryAvailability" finished-at="2023-07-28T00:45:12 IST" duration-ms="382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category003_verifyWomenBottomsCategoryAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:12 IST" name="closeDriver" finished-at="2023-07-28T00:45:13 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:13 IST" name="launchTheURL" finished-at="2023-07-28T00:45:26 IST" duration-ms="13269" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category004_verifyMenTopsCategoryAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:26 IST" name="Category004_verifyMenTopsCategoryAvailability" finished-at="2023-07-28T00:45:26 IST" duration-ms="429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category004_verifyMenTopsCategoryAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:26 IST" name="closeDriver" finished-at="2023-07-28T00:45:27 IST" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:27 IST" name="launchTheURL" finished-at="2023-07-28T00:45:41 IST" duration-ms="14185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category005_verifyMenBottomsCategoryAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:41 IST" name="Category005_verifyMenBottomsCategoryAvailability" finished-at="2023-07-28T00:45:41 IST" duration-ms="367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category005_verifyMenBottomsCategoryAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:41 IST" name="closeDriver" finished-at="2023-07-28T00:45:41 IST" duration-ms="252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:41 IST" name="launchTheURL" finished-at="2023-07-28T00:45:55 IST" duration-ms="13316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category006_verifyGearCategoryAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:55 IST" name="Category006_verifyGearCategoryAvailability" finished-at="2023-07-28T00:45:55 IST" duration-ms="258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category006_verifyGearCategoryAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:55 IST" name="closeDriver" finished-at="2023-07-28T00:45:55 IST" duration-ms="315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:45:55 IST" name="launchTheURL" finished-at="2023-07-28T00:46:11 IST" duration-ms="15423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Category007_verifyTrainingAvailability()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:46:11 IST" name="Category007_verifyTrainingAvailability" finished-at="2023-07-28T00:46:11 IST" duration-ms="192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Category007_verifyTrainingAvailability -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Category@43bc63a3]" started-at="2023-07-28T00:46:11 IST" name="closeDriver" finished-at="2023-07-28T00:46:11 IST" duration-ms="242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- lumaTestCases.Category -->
+      <class name="lumaTestCases.Login">
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:00 IST" name="launchTheURL" finished-at="2023-07-28T00:43:04 IST" duration-ms="3306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login001_LoginWithValidCredentials()[pri:1, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:04 IST" name="Login001_LoginWithValidCredentials" finished-at="2023-07-28T00:43:11 IST" duration-ms="6868" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='Welcome, Chandra B!'][1]"}
+  (Session info: chrome=115.0.5790.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4d4b1eddee3441ba602e51fa98e34908, findElement {using=xpath, value=//*[text()='Welcome, Chandra B!'][1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CHANDR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54823/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4d4b1eddee3441ba602e51fa98e34908]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='Welcome, Chandra B!'][1]"}
+  (Session info: chrome=115.0.5790.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4d4b1eddee3441ba602e51fa98e34908, findElement {using=xpath, value=//*[text()='Welcome, Chandra B!'][1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\CHANDR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54823/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4d4b1eddee3441ba602e51fa98e34908
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at lumaTestCases.Login.Login001_LoginWithValidCredentials(Login.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login001_LoginWithValidCredentials -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:11 IST" name="closeDriver" finished-at="2023-07-28T00:43:11 IST" duration-ms="736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:11 IST" name="launchTheURL" finished-at="2023-07-28T00:43:14 IST" duration-ms="3018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login002_LoginWithInvalidCredentials()[pri:2, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:14 IST" name="Login002_LoginWithInvalidCredentials" finished-at="2023-07-28T00:43:22 IST" duration-ms="7242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login002_LoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:22 IST" name="closeDriver" finished-at="2023-07-28T00:43:22 IST" duration-ms="631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:22 IST" name="launchTheURL" finished-at="2023-07-28T00:43:25 IST" duration-ms="2988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login003_valiDEmail_InvalidPass()[pri:3, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:25 IST" name="Login003_valiDEmail_InvalidPass" finished-at="2023-07-28T00:43:32 IST" duration-ms="7072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login003_valiDEmail_InvalidPass -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:32 IST" name="closeDriver" finished-at="2023-07-28T00:43:33 IST" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:33 IST" name="launchTheURL" finished-at="2023-07-28T00:43:36 IST" duration-ms="2809" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login004_invaliDEmail_validPassword()[pri:4, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:36 IST" name="Login004_invaliDEmail_validPassword" finished-at="2023-07-28T00:43:41 IST" duration-ms="4862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login004_invaliDEmail_validPassword -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:41 IST" name="closeDriver" finished-at="2023-07-28T00:43:41 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:41 IST" name="launchTheURL" finished-at="2023-07-28T00:43:44 IST" duration-ms="3141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login005_loginWithoutEmailAndPAssword()[pri:5, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:44 IST" name="Login005_loginWithoutEmailAndPAssword" finished-at="2023-07-28T00:43:46 IST" duration-ms="1746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login005_loginWithoutEmailAndPAssword -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:46 IST" name="closeDriver" finished-at="2023-07-28T00:43:46 IST" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:46 IST" name="launchTheURL" finished-at="2023-07-28T00:43:49 IST" duration-ms="2873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login006_loginWithOnlyEmail()[pri:6, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:49 IST" name="Login006_loginWithOnlyEmail" finished-at="2023-07-28T00:43:51 IST" duration-ms="1830" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login006_loginWithOnlyEmail -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:51 IST" name="closeDriver" finished-at="2023-07-28T00:43:51 IST" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchTheURL()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:51 IST" name="launchTheURL" finished-at="2023-07-28T00:43:54 IST" duration-ms="2798" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTheURL -->
+        <test-method signature="Login007_loginWithOnlyPassword()[pri:7, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:54 IST" name="Login007_loginWithOnlyPassword" finished-at="2023-07-28T00:43:56 IST" duration-ms="1816" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login007_loginWithOnlyPassword -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:lumaTestCases.Login@54d9d12d]" started-at="2023-07-28T00:43:56 IST" name="closeDriver" finished-at="2023-07-28T00:43:56 IST" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- lumaTestCases.Login -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

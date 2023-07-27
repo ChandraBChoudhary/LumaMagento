@@ -27,7 +27,7 @@ import net.sourceforge.tess4j.*;
 
 public class Base extends LocatorPages{
 	public WebDriver driver ;
-	public Properties prop = new Properties();
+	public static Properties prop = new Properties();
 	public Properties testData = new Properties();
 	
 
@@ -57,7 +57,7 @@ public Base() throws IOException {
 				Date date =new Date();
 				String timestamp = date.toString().replace(" ","").replace(":","");
 			    Random random = new Random();
-		         //Generate a random integer between 1 and 10
+		        //Generate a random integer between 1 and 10
 		        int random_number = random.nextInt(100)+1;
 			    String NewEmail = "Chan+" + random_number + timestamp + random_number+ "@yopmail.com";
 			    System.out.println(NewEmail);
@@ -65,15 +65,45 @@ public Base() throws IOException {
 			    Properties prop1 = new Properties();
 			    //Writing to properties file
 			    prop1.setProperty("newUserEmailAddress", NewEmail);
-			        File filePath = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
-			        //Saving properties to a file
-			        OutputStream output = new FileOutputStream(filePath);
-			        prop1.store(output, "Email updated in properties file successfully");
-				        output.close();
-				       //Refreshing the config.properties file
+			    File filePath = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
+			    //Saving properties to a file
+			    OutputStream output = new FileOutputStream(filePath);
+			    prop1.store(output, "Email updated in properties file successfully");
+				output.close();
+				//Refreshing the config.properties file
 				        
 			        
-			}	  
+			}	
+			
+//			public void writeToPropertiesFile(String newEmail) throws IOException {
+//				Properties prop1 = new Properties();
+//			    //Writing to properties file
+//			    prop1.setProperty("newUserEmailAddress", newEmail);
+//			        
+//			        //Saving properties to a file
+//			        OutputStream output = new FileOutputStream(filePath);
+//			        prop1.store(output, "Email updated in properties file successfully");
+//				        output.close();
+//			}
+//			
+//			public void clearDataFromPropertiesFile() {
+//				prop.remove("newUserEmailAddress");
+//				try (FileInputStream input = new FileInputStream(filePath)) {
+//		            prop.load(input);
+//		        } catch (IOException e) {
+//		            e.printStackTrace();
+//		        }
+//
+//		        // Remove the data you want from the properties object
+//		        prop.remove("newUserEmailAddress");
+//
+//		        try (OutputStream output = new FileOutputStream(filePath)) {
+//		            prop.store(output, null);
+//		            System.out.println("Data cleared from config file");
+//		        } catch (IOException e) {
+//		            e.printStackTrace();
+//		        }
+//			}
 
 	
 	public WebDriver launchTheBrowserAndApplication(String browserName) {

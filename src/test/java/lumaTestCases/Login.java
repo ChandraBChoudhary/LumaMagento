@@ -39,7 +39,7 @@ public class Login extends Base{
         driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
         driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
         driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-//        //Captcha is displayed after 1st sign in click 
+//        Captcha is displayed after 1st sign in click 
 //        driver.findElement(By.id("email")).sendKeys(testData.getProperty("emailAddress"));
 //        driver.findElement(By.name("login[password]")).sendKeys(testData.getProperty("password"));
 //        base.readCaptcha();
