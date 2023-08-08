@@ -3,13 +3,20 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="lumaTestCases.Login">
+      <class name="lumaTestCases.Purchases">
         <methods>
-          <include name="launchTheURL"/>
+          <include name="purchaseWomensJacket"/>
           <include name="closeDriver"/>
-          <include name="Login001_LoginWithValidCredentials"/>
+          <include name="launchTheURL"/>
         </methods>
-      </class> <!-- lumaTestCases.Login -->
+      </class> <!-- lumaTestCases.Purchases -->
+      <class name="lumaTestCases.Registration">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="Register002_createAccountwithoutdata"/>
+          <include name="launchTheURL"/>
+        </methods>
+      </class> <!-- lumaTestCases.Registration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

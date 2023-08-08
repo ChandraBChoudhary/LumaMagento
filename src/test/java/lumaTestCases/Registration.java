@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.LumaMagento.Base.Base;
+import com.LumaMagento.Base.TestMethods;
 import com.LumaMagento.Base.Waits;
 
 public class Registration extends Base{
@@ -20,7 +21,7 @@ public class Registration extends Base{
 		// TODO Auto-generated constructor stub
 	}
 
-	Base base;
+	Base base = new Base();
 	WebDriver driver;
 	
 
@@ -31,7 +32,6 @@ public class Registration extends Base{
 	
 	@BeforeMethod
 	public void launchTheURL() throws IOException, InterruptedException {
-		base = new Base();
 		driver = base.launchTheBrowserAndApplication(testData.getProperty("browser"));
 		Waits.waitFor5seconds();
 		
@@ -42,114 +42,111 @@ public class Registration extends Base{
 		base.addTimestampToEmail();
 //		base.readConfigFile();
 		System.out.println("Email being printed from property file : " + prop.getProperty("newUserEmailAddress"));
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
-		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("password"));
-		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("password"));
-		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(emailTxtBx, prop.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("password"));
+		TestMethods.enterInputData_ID(confirmPwdfield, testData.getProperty("password"));
+		TestMethods.xpathClick(createAccBtn);
 		Waits.waitFor2seconds();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.registrationSucessValidation)).isDisplayed());
-		
+		TestMethods.elementIsDisplayed(LocatorPages.registrationSucessValidation);
 	}
 	
 	@Test(priority = 1)
 	public void Register002_createAccountwithoutdata() throws InterruptedException, IOException {
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.xpathClick(createAccBtn);
 		Waits.waitFor2seconds();
-		Assert.assertTrue(driver.findElement(By.id(LocatorPages.requiredFirstName)).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.id(LocatorPages.requiredLastName)).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.id(LocatorPages.requiredEmail)).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.id(LocatorPages.requiredPassword)).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.id(LocatorPages.requiredConfirmPassword)).isDisplayed());
+		TestMethods.elementIsDisplayed(LocatorPages.requiredFirstName);
+		TestMethods.elementIsDisplayed(LocatorPages.requiredLastName);
+		TestMethods.elementIsDisplayed(LocatorPages.requiredEmail);
+		TestMethods.elementIsDisplayed(LocatorPages.requiredPassword);
+		TestMethods.elementIsDisplayed(LocatorPages.requiredConfirmPassword);
 		
 	}
 	
 	@Test(priority = 2)
 	public void Register003_registerExistingUser() throws InterruptedException, IOException {
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
-		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(testData.getProperty("emailAddress"));
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("password"));
-		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("password"));
-		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(emailTxtBx, testData.getProperty("emailAddress"));
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("password"));
+		TestMethods.enterInputData_ID(confirmPwdfield, testData.getProperty("password"));
+		TestMethods.xpathClick(createAccBtn);
 		Waits.waitFor2seconds();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.captchaError)).isDisplayed());
-		
+		TestMethods.elementIsDisplayed(LocatorPages.captchaError);
 	}
 	
 //	@Test(priority = 3)
 //	public void Regsiter004_registerUserWithNewsLetterSignUp() throws Throwable {
 //		base.addTimestampToEmail();
-//		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-//		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-//		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-//		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
+//		TestMethods.linkTextClick(createAccLink);
+//		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+//		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+//		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
 //		Waits.waitFor5seconds();
-//		driver.findElement(By.id(LocatorPages.newletterSignUpCheckbox)).click();
-//		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-//		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("password"));
-//		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("password"));
-//		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
+//		TestMethods.IDClick(newletterSignUpCheckbox);
+//		TestMethods.enterInputData_Name(emailTxtBx, prop.getProperty("newUserLastName"));
+//		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("password"));
+//		TestMethods.enterInputData_ID(confirmPwdfield, prop.getProperty("password"));
+//		TestMethods.xpathClick(createAccBtn);
 //		Waits.waitFor2seconds();
 ////		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.registrationSucessValidation)).isDisplayed());
 ////		Assert.assertTrue(driver.findElement(By.cssSelector(LocatorPages.validationNewsLetterSignUp)).isDisplayed());
 //	}
+//	
+	
 	@Test(priority = 3)
 	public void Register005_validateStrongPassword() {
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("password"));
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.strongPassword)).isDisplayed());
-		
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("password"));
+		TestMethods.elementIsDisplayed(LocatorPages.strongPassword);		
 	}
+	
 	@Test(priority = 4)
 	public void Register006_validateWeakPasswordAndRegister() throws Throwable {
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		//base.addTimestampToEmail();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
-		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("weakPass"));
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.weakPassword)).isDisplayed());	
-		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("weakPass"));
-
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);	
+		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(emailTxtBx, prop.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("weakPass"));
+		TestMethods.elementIsDisplayed(LocatorPages.weakPassword);
+		TestMethods.enterInputData_ID(confirmPwdfield, testData.getProperty("weakPass"));
 	}
+	
 	@Test(priority = 5)
 	public void Register007_validatePasswordCritera() throws IOException {
 		//base.addTimestampToEmail();
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
-		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("missingCriteria"));
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.missingPassCriteria)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("missingCriteria"));
-		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.missingPassCriteria)).isDisplayed());
-
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(emailTxtBx, prop.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("missingCriteria"));
+		TestMethods.elementIsDisplayed(LocatorPages.missingPassCriteria);
+		TestMethods.enterInputData_ID(confirmPwdfield, testData.getProperty("missingCriteria"));
+		TestMethods.xpathClick(createAccBtn);
+		TestMethods.elementIsDisplayed(LocatorPages.missingPassCriteria);
 	}
 	
 	@Test(priority = 6)
 	public void Register008_confirmPasswordDoesNotMatchPassword() throws IOException {
 		//base.addTimestampToEmail();
-		driver.findElement(By.linkText(LocatorPages.createAccLink)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.createAccTitle)).isDisplayed());
-		driver.findElement(By.id(LocatorPages.fisrtNameField)).sendKeys(testData.getProperty("newUserFirstName"));
-		driver.findElement(By.id(LocatorPages.lastNameField)).sendKeys(testData.getProperty("newUserLastName"));
-		driver.findElement(By.name(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-		driver.findElement(By.name(LocatorPages.regPwdField)).sendKeys(testData.getProperty("password"));
-		driver.findElement(By.id(LocatorPages.confirmPwdfield)).sendKeys(testData.getProperty("missingCriteria"));
-		driver.findElement(By.xpath(LocatorPages.createAccBtn)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.passwordDoNotMatch)).isDisplayed());
-
+		TestMethods.linkTextClick(createAccLink);
+		TestMethods.elementIsDisplayed(LocatorPages.createAccTitle);
+		TestMethods.enterInputData_ID(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_ID(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(emailTxtBx, prop.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(regPwdField, testData.getProperty("password"));
+		TestMethods.enterInputData_ID(confirmPwdfield, testData.getProperty("missingCriteria"));
+		TestMethods.xpathClick(createAccBtn);
+		TestMethods.elementIsDisplayed(LocatorPages.passwordDoNotMatch);
 	}
 }

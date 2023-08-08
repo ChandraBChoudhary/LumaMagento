@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.LumaMagento.Base.Base;
+import com.LumaMagento.Base.TestMethods;
 import com.LumaMagento.Base.Waits;
 
 public class SearchProduct extends Base{
@@ -26,24 +27,24 @@ public class SearchProduct extends Base{
 	@BeforeMethod
 	public void launchTheURL() throws IOException, InterruptedException {
 		driver = base.launchTheBrowserAndApplication(testData.getProperty("browser"));
-		base.loginToApplication();
+		//base.loginToApplication();
 	}
 	
 	@Test
 	public void Search001_SearchByProduct() throws IOException, InterruptedException {
         Waits.waitFor2seconds();
-		driver.findElement(By.xpath(searchTxtBx)).sendKeys(testData.getProperty("searchProduct"));
-		driver.findElement(By.xpath(searchIcon)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(searchResultValidation)).isDisplayed());
-		
+        TestMethods.enterInputData_Xpath(searchTxtBx, testData.getProperty("searchProduct"));
+		TestMethods.xpathClick(searchIcon);
+		TestMethods.elementIsDisplayed(searchResultValidation);
+	
 	}
 	
 	@Test
 	public void Search002_InvalidSearchProduct() throws IOException, InterruptedException {
-        Waits.waitFor2seconds();
-		driver.findElement(By.xpath(searchTxtBx)).sendKeys(testData.getProperty("searchInvalidProduct"));
-		driver.findElement(By.xpath(searchIcon)).click();
-		Assert.assertTrue(driver.findElement(By.xpath(invalidSearchResultValidation)).isDisplayed());
+		 Waits.waitFor2seconds();
+         TestMethods.enterInputData_Xpath(searchTxtBx, testData.getProperty("searchInvalidProduct"));
+		 TestMethods.xpathClick(searchIcon);
+		 TestMethods.elementIsDisplayed(invalidSearchResultValidation);
 		
 	}
 	

@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 import java.io.OutputStream;
+import java.time.Duration;
+
 import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
@@ -26,7 +28,7 @@ import lumaTestCases.LocatorPages;
 import net.sourceforge.tess4j.*;
 
 public class Base extends LocatorPages{
-	public WebDriver driver ;
+	public static WebDriver driver ;
 	public static Properties prop = new Properties();
 	public Properties testData = new Properties();
 	
@@ -166,14 +168,19 @@ public Base() throws IOException {
 
 	
 public void loginToApplication() throws InterruptedException {
-	driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-    driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-    driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
-    driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-    Waits.waitFor2seconds();
+	TestMethods.linkTextClick(LocatorPages.SignInLink);
+	TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, prop.getProperty("newUserEmailAddress"));
+	TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
+	TestMethods.xpathClick(LocatorPages.signInButton);
+    Waits.waitFor3seconds();
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+    TestMethods.elementIsDisplayed(LocatorPages.userName);
+    TestMethods.xpathClick(LocatorPages.profiledrpdwn);
+    TestMethods.linkTextClick(LocatorPages.signOutBtn);
+
 }
 
-public void testHoverElement(String elementToHever) {
+public static void testHoverElement(String elementToHever) {
     // Find the element you want to hover over
     WebElement ElementToHover = driver.findElement(By.xpath(elementToHever)); 
     
@@ -183,6 +190,11 @@ public void testHoverElement(String elementToHever) {
 
     // You can add additional actions after the hover if needed, like clicking on a sub-element that appears on hover.
     // Example: actions.click(subElement).build().perform();
+}
+
+public String validationOfCategory(String locator) {
+	String validationOfCategoryXpath = "(//*[@class='base'][text()='" + locator  + "'])";
+	return validationOfCategoryXpath;
 }
 
 }

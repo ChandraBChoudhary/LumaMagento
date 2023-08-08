@@ -7,6 +7,7 @@
       	<class name="lumaTestCases.Login"/>
       	<class name="lumaTestCases.SearchProduct"/>
       	<class name="lumaTestCases.Category"/>
+      	<class name="lumaTestCases.Purchases"/>
       	
       
     </classes>

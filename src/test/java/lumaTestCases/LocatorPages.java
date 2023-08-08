@@ -1,8 +1,12 @@
 package lumaTestCases;
 
+import org.openqa.selenium.By;
+
+import com.LumaMagento.Base.Waits;
+
 public class LocatorPages{
 		 
-	 //Login Page Loctaors 
+	 //Login Page Locators 
 	 protected static String SignInLink = "Sign In"; //Landing page header link 
 	 protected static String emailTxtBx = "email" ;
 	 protected static String passwordField = "login[password]";
@@ -86,6 +90,9 @@ public class LocatorPages{
 	  protected static String learningsTrainingVideo = "(//a[@class='ui-corner-all']/span[text()='Video Download'])";
 	  
 	  
+	  
+	  
+
 	}
 	
 	

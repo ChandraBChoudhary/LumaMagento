@@ -35,80 +35,63 @@ public class Login extends Base{
 	@Test(priority = 1)
 	public void Login001_LoginWithValidCredentials() throws IOException, Exception {
 		//base.readConfigFile();
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(prop.getProperty("newUserEmailAddress"));
-        driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-//        Captcha is displayed after 1st sign in click 
-//        driver.findElement(By.id("email")).sendKeys(testData.getProperty("emailAddress"));
-//        driver.findElement(By.name("login[password]")).sendKeys(testData.getProperty("password"));
-//        base.readCaptcha();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.userName)).isDisplayed());
-        driver.findElement(By.xpath(LocatorPages.profiledrpdwn)).click();
-        driver.findElement(By.linkText(LocatorPages.signOutBtn)).click();
+		base.loginToApplication();
         
 	}
 	@Test(priority = 2)
 	public void Login002_LoginWithInvalidCredentials() throws IOException, Exception {
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(testData.getProperty("incorrectEmail"));
-        driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("invalidPass"));
-//        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-//      //Captcha is displayed after 1st sign in click 
-//        driver.findElement(By.id("email")).sendKeys(testData.getProperty("incorrectEmail"));
-//        driver.findElement(By.name("login[password]")).sendKeys(testData.getProperty("invalidPass"));
-//      //base.readCaptcha();
-//        Waits.waitFor15seconds();
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, testData.getProperty("incorrectEmail"));
+		TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("invalidPass"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
         Waits.waitFor3seconds();
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.captchaError)).isDisplayed());
+        TestMethods.elementIsDisplayed(LocatorPages.captchaError);
        
 	}
 	
 	@Test(priority = 3)
 	public void Login003_valiDEmail_InvalidPass() throws Throwable {
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(testData.getProperty("emailAddress"));
-        driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("invalidPass"));
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-        Thread.sleep(3000);
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.captchaError)).isDisplayed());
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, testData.getProperty("emailAddress"));
+		TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("invalidPass"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
+        Waits.waitFor3seconds();
+        TestMethods.elementIsDisplayed(LocatorPages.captchaError);
+
 	}
 	
 	@Test(priority = 4)
 	public void Login004_invaliDEmail_validPassword() throws InterruptedException {
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(testData.getProperty("invalidEmail"));
-        driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-        Thread.sleep(3000);
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.emailValidationError)).isDisplayed());
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, testData.getProperty("invalidEmail"));
+		TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
+        Waits.waitFor3seconds();
+        TestMethods.elementIsDisplayed(LocatorPages.emailValidationError);
 	}
 	
 	@Test(priority = 5)
 	public void Login005_loginWithoutEmailAndPAssword() {
-		
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.emailValidationError)).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.pwdValidationError)).isDisplayed());
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.xpathClick(LocatorPages.signInButton);
+		TestMethods.elementIsDisplayed(LocatorPages.emailValidationError);
+		TestMethods.elementIsDisplayed(LocatorPages.pwdValidationError);
 	}
 	
 	@Test(priority = 6)
 	public void Login006_loginWithOnlyEmail() {
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.id(LocatorPages.emailTxtBx)).sendKeys(testData.getProperty("invalidEmail"));
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.pwdValidationError)).isDisplayed());
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, testData.getProperty("invalidEmail"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
+		TestMethods.elementIsDisplayed(LocatorPages.pwdValidationError);
 	}
 	
 	@Test(priority = 7)
 	public void Login007_loginWithOnlyPassword(){
-		driver.findElement(By.linkText(LocatorPages.SignInLink)).click();
-        driver.findElement(By.name(LocatorPages.passwordField)).sendKeys(testData.getProperty("password"));
-        driver.findElement(By.xpath(LocatorPages.signInButton)).click();
-        Assert.assertTrue(driver.findElement(By.xpath(LocatorPages.emailValidationError)).isDisplayed());
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
+		TestMethods.elementIsDisplayed(LocatorPages.emailValidationError);
 	}
 
 }
