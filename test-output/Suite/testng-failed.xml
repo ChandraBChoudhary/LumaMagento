@@ -5,18 +5,11 @@
     <classes>
       <class name="lumaTestCases.Purchases">
         <methods>
-          <include name="purchaseWomensJacket"/>
+          <include name="purchaseWomensJacketAndAddToCart"/>
           <include name="closeDriver"/>
           <include name="launchTheURL"/>
         </methods>
       </class> <!-- lumaTestCases.Purchases -->
-      <class name="lumaTestCases.Registration">
-        <methods>
-          <include name="closeDriver"/>
-          <include name="Register002_createAccountwithoutdata"/>
-          <include name="launchTheURL"/>
-        </methods>
-      </class> <!-- lumaTestCases.Registration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

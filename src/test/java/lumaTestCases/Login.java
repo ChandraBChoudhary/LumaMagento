@@ -36,6 +36,9 @@ public class Login extends Base{
 	public void Login001_LoginWithValidCredentials() throws IOException, Exception {
 		//base.readConfigFile();
 		base.loginToApplication();
+		TestMethods.elementIsDisplayed(LocatorPages.userName);
+	    TestMethods.xpathClick(LocatorPages.profiledrpdwn);
+	    TestMethods.linkTextClick(LocatorPages.signOutBtn);
         
 	}
 	@Test(priority = 2)
@@ -71,9 +74,10 @@ public class Login extends Base{
 	}
 	
 	@Test(priority = 5)
-	public void Login005_loginWithoutEmailAndPAssword() {
+	public void Login005_loginWithoutEmailAndPAssword() throws InterruptedException {
 		TestMethods.linkTextClick(LocatorPages.SignInLink);
 		TestMethods.xpathClick(LocatorPages.signInButton);
+		Waits.waitFor1seconds();
 		TestMethods.elementIsDisplayed(LocatorPages.emailValidationError);
 		TestMethods.elementIsDisplayed(LocatorPages.pwdValidationError);
 	}

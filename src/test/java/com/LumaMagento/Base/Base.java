@@ -173,10 +173,8 @@ public void loginToApplication() throws InterruptedException {
 	TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
 	TestMethods.xpathClick(LocatorPages.signInButton);
     Waits.waitFor3seconds();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-    TestMethods.elementIsDisplayed(LocatorPages.userName);
-    TestMethods.xpathClick(LocatorPages.profiledrpdwn);
-    TestMethods.linkTextClick(LocatorPages.signOutBtn);
+//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//    
 
 }
 
@@ -195,6 +193,25 @@ public static void testHoverElement(String elementToHever) {
 public String validationOfCategory(String locator) {
 	String validationOfCategoryXpath = "(//*[@class='base'][text()='" + locator  + "'])";
 	return validationOfCategoryXpath;
+}
+
+public void sizeXpath(String size) {
+	String xpathOfSize = "//*[@class='swatch-option text'][text() = '"+ size+ "']";
+	TestMethods.xpathClick(xpathOfSize);
+}
+public void colorOfProduct(String color) {
+	String proColor = "//*[@aria-label='"+color+"']";
+	TestMethods.xpathClick(proColor);
+	
+}
+
+public void goToCart() {
+	TestMethods.xpathClick(cart);
+}
+public void verifyProductAddedToCart(String product, String index) {
+	String proInCart = product + index;
+	System.out.println(proInCart);
+	TestMethods.elementIsDisplayed(proInCart);
 }
 
 }

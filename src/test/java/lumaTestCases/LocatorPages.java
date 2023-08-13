@@ -29,11 +29,11 @@ public class LocatorPages{
 	 protected static String confirmPwdfield = "password-confirmation";
 	 protected static String createAccBtn = "//*[@class= 'action submit primary']";
 	 protected static String registrationSucessValidation = "//*[@class='message-success success message']";
-	 protected static String requiredFirstName = "firstname-error";
-	 protected static String requiredLastName = "lastname-error";
-	 protected static String requiredEmail = "email_address-error";
-	 protected static String requiredPassword = "password-error";
-	 protected static String requiredConfirmPassword = "password-confirmation-error";
+	 protected static String requiredFirstName = "//*[@id = 'firstname-error']";
+	 protected static String requiredLastName = "//*[@id = 'lastname-error']";
+	 protected static String requiredEmail = "//*[@id = 'email_address-error']";
+	 protected static String requiredPassword = "//*[@id = 'password-error']";
+	 protected static String requiredConfirmPassword = "//*[@id = 'password-confirmation-error']";
 	 protected static String newletterSignUpCheckbox = "is_subscribed";
 	 protected static String validationNewsLetterSignUp = "div[class='box box-newsletter'] p";
 	 protected static String strongPassword = "(//span[@id='password-strength-meter-label'][text()='Very Strong'])";
@@ -89,10 +89,16 @@ public class LocatorPages{
 	  protected static String trainingCategoryValidation = "(//*[@class='base'][text()='Training'])";
 	  protected static String learningsTrainingVideo = "(//a[@class='ui-corner-all']/span[text()='Video Download'])";
 	  
+	  //Purchase women jackets 
+	  protected static String olivia14thZipLightJacket = "(//img[@alt='Olivia 1/4 Zip Light Jacket'])";
 	  
+	  //Add to Cart
+	  protected static String addToCart = "//button[@id='product-addtocart-button']";
+	  protected static String validateAddToCart = "(//*[contains(text(), 'You added')])";
+	  protected static String cart = "//a[@class='action showcart']";
 	  
-	  
-
+	  //Proceed to checkout
+	  protected static String proceedToCheckoutButtonInCart = "//button[@title = 'Proceed to Checkout'][1]";
 	}
 	
 	
