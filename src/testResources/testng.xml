@@ -6,7 +6,7 @@
 	</listeners>
   <test name="Test">
     <classes>
-		<!-- <class name="lumaTestCases.Registration"/>
+	<!-- 	<class name="lumaTestCases.Registration"/>
       	<class name="lumaTestCases.Login"/>
       	<class name="lumaTestCases.SearchProduct"/>
       	<class name="lumaTestCases.Category"/>

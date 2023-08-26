@@ -23,7 +23,7 @@ public class WomenJacketPurchases extends Base{
 		// TODO Auto-generated constructor stub
 	}
 
-	Base base = new Base();
+	
 	public WebDriver driver;
 	
 	@AfterMethod
@@ -33,7 +33,7 @@ public class WomenJacketPurchases extends Base{
 	
 	@BeforeMethod
 	public void launchTheURL() throws IOException, InterruptedException {
-		driver = base.launchTheBrowserAndApplication(testData.getProperty("browser"));
+		driver = Base.launchTheBrowserAndApplication(testData.getProperty("browser"));
 		//base.loginToApplication();
 		Waits.waitFor4seconds();
 	}

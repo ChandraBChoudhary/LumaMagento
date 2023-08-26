@@ -8,13 +8,26 @@
     <classes>
       <class name="lumaTestCases.menJacketPurchases">
         <methods>
-          <include name="purchaseMenProteusBlackJacket"/>
           <include name="purchaseMensMarsRedJacket"/>
-          <include name="purchaseMensJupiterBlueJacket"/>
+          <include name="purchaseMensOrionBlackJacket"/>
+          <include name="purchaseMensHyperionOrangeJacket"/>
           <include name="purchaseMensJupiterPurpleJacket"/>
+          <include name="purchaseMensTaurusYellowJacket"/>
+          <include name="purchaseMensBeaumontRedJacket"/>
+          <include name="purchaseMensTyphonGreenJacket"/>
+          <include name="purchaseMensKenobiPurpleJacket"/>
+          <include name="purchaseMensTaurusWhiteJacket"/>
+          <include name="purchaseMensTyphonBlackJacket"/>
+          <include name="purchaseMensKenobiBlueJacket"/>
+          <include name="purchaseMensMontanaGreenJacket"/>
+          <include name="purchaseMensJupiterBlueJacket"/>
+          <include name="purchaseMensOrionRedJacket"/>
           <include name="closeDriver"/>
-          <include name="purchaseMenProteusBlueJacket"/>
           <include name="launchTheURL"/>
+          <include name="purchaseMensBeaumontYellowJacket"/>
+          <include name="purchaseMensMontanaBlackJacket"/>
+          <include name="purchaseMensLandoGreenJacket"/>
+          <include name="purchaseMensLandoGrayJacket"/>
           <include name="ppurchaseMensHyperionGreenJacket"/>
           <include name="purchaseMensMarsOrangeJacket"/>
         </methods>

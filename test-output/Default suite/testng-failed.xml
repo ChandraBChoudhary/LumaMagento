@@ -3,13 +3,35 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lumaTestCases.menJacketPurchases">
+      <class name="lumaTestCases.WomenJacketPurchases">
         <methods>
+          <include name="purchaseWomensDanceOrangeJacket"/>
+          <include name="purchaseWomensDanceBlueJacket"/>
           <include name="closeDriver"/>
+          <include name="purchaseWomensJadeGrayJacket"/>
+          <include name="purchaseWomensInezRedJacket"/>
+          <include name="purchaseWomensJunoBlueJacket"/>
+          <include name="purchaseWomensInezOrangeJacket"/>
+          <include name="purchaseWomensJosieRedJacket"/>
+          <include name="purchaseWomensJosieBlackJacket"/>
+          <include name="purchaseWomensNadiaShellOrangeJacket"/>
+          <include name="purchaseWomensIngridWhiteJacket"/>
+          <include name="purchaseWomensJosieGrayJacket"/>
+          <include name="purchaseWomensAugustaRedJacket"/>
+          <include name="purchaseWomensOliviaBlackJacket"/>
           <include name="launchTheURL"/>
-          <include name="ppurchaseMensHyperionGreenJacket"/>
+          <include name="purchaseWomensAdrienneGreenJacket"/>
+          <include name="purchaseWomensIngridOrangeJacket"/>
+          <include name="purchaseWomensJunoGreenJacket"/>
+          <include name="purchaseWomensRionaBrownJacket"/>
+          <include name="purchaseWomensStellarYellowJacket"/>
+          <include name="purchaseWomensNadiaShellBlackJacket"/>
+          <include name="purchaseWomensRionaRedJacket"/>
+          <include name="purchaseWomensAdrienneOrangeJacket"/>
+          <include name="purchaseWomensAugustaBlueJacket"/>
+          <include name="purchaseWomensJadeBlueJacket"/>
         </methods>
-      </class> <!-- lumaTestCases.menJacketPurchases -->
+      </class> <!-- lumaTestCases.WomenJacketPurchases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
