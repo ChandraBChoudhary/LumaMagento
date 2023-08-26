@@ -22,7 +22,7 @@ public class Registration extends Base{
 	}
 
 	Base base = new Base();
-	WebDriver driver;
+	public WebDriver driver;
 	
 
 	@AfterMethod

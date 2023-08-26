@@ -36,6 +36,8 @@ public class Waits extends Base{
 		Thread.sleep(1000);
 	}
 	
+	
+	
 	public static WebElement xpath(String locator) {
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element;
@@ -55,6 +57,12 @@ public class Waits extends Base{
 		WebElement element = driver.findElement(By.linkText(locator));
 		return element;
 	}
+	
+//	public static WebElement selectValue(String locator) {
+//		WebElement element = driver.findElement(By.xpath(locator));
+//		return element;
+//		
+//	}
 //	public static void linkText(String locator) {
 //		driver.findElement(By.linkText(locator));
 //	

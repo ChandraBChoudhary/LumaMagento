@@ -98,7 +98,30 @@ public class LocatorPages{
 	  protected static String cart = "//a[@class='action showcart']";
 	  
 	  //Proceed to checkout
+	  protected static String proceedToCheckoutButtonInTopCart = "//button[@title = 'Proceed to Checkout'][1]";
 	  protected static String proceedToCheckoutButtonInCart = "//button[@title = 'Proceed to Checkout'][1]";
+	  protected static String validateShippingAddress = "//*[@class='step-title'][text()='Shipping Address']";
+	  
+	  //Shipping Address and screen
+	  
+	  protected static String shippingEmail = "(//*[@class='input-text'][@id='customer-email'])[1]";
+	  protected static String shippingCompany = "company";
+	  protected static String shippingAdd1 = "//*[@name='street[0]']";
+	  protected static String shippingAdd2 = "//*[@name='street[1]']";
+	  protected static String shippingAdd3 = "//*[@name='street[2]']";
+	  protected static String shippingCity = "//*[@name='city']";
+	  protected static String shippingStateOrProvince = "//*[@name='region_id']";
+	  protected static String shippingCountry = "//*[@name='country_id']" ;
+	  protected static String shippingZipcode = "//*[@name='postcode']";
+	  protected static String shippingTelephone = "//*[@name='telephone']";
+	  protected static String shippingTableRate = "//*[text() ='Table Rate']";
+	  protected static String shippingFixedRate = "//*[text() ='Fixed']";
+	  protected static String shippingNextButton = "//*[@class='button action continue primary']";
+	  
+	  //Payment methods
+	  protected static String paymentMethod = "//*[@class='step-title'][text() = 'Payment Method']";
+	  protected static String placeOrderButton = "//*[@title = 'Place Order']";
+	  protected static String placedOrderSuccessMessage = "//*[text() = 'Thank you for your purchase!']";
 	}
 	
 	

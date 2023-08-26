@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lumaTestCases.Purchases">
+      <class name="lumaTestCases.menJacketPurchases">
         <methods>
-          <include name="purchaseWomensJacketAndAddToCart"/>
           <include name="closeDriver"/>
           <include name="launchTheURL"/>
+          <include name="ppurchaseMensHyperionGreenJacket"/>
         </methods>
-      </class> <!-- lumaTestCases.Purchases -->
+      </class> <!-- lumaTestCases.menJacketPurchases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

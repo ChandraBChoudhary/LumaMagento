@@ -12,11 +12,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.LumaMagento.Base.*;
+import com.aventstack.extentreports.ExtentTest;
 
 public class Login extends Base{
 	//POM_methods brow = new POM_methods();
 	Base base = new Base();
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public Login() throws IOException {
 		//super();
@@ -28,13 +29,15 @@ public class Login extends Base{
 	
 	@BeforeMethod
 	public void launchTheURL() throws IOException {
+		
 		driver = base.launchTheBrowserAndApplication(testData.getProperty("browser"));
 		
 	}
 	
 	@Test(priority = 1)
 	public void Login001_LoginWithValidCredentials() throws IOException, Exception {
-		//base.readConfigFile();
+//		ExtentTest test = extent.createTest("Verify logging in with valid credentials").assignAuthor("Chandra B")
+//				.assignCategory("functional Test Case").assignDevice("windows");
 		base.loginToApplication();
 		TestMethods.elementIsDisplayed(LocatorPages.userName);
 	    TestMethods.xpathClick(LocatorPages.profiledrpdwn);

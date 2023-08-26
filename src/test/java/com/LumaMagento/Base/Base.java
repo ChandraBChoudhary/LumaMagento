@@ -24,17 +24,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
 import lumaTestCases.LocatorPages;
 import net.sourceforge.tess4j.*;
 
 public class Base extends LocatorPages{
 	public static WebDriver driver ;
 	public static Properties prop = new Properties();
-	public Properties testData = new Properties();
+	public static Properties testData = new Properties();
 	
+	protected ExtentReports extent = new ExtentReports();
+	ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
 
-
-public Base() throws IOException {
+	public Base() throws IOException {
 			File testDataFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\LumaMagento\\TestData\\testData.properties");		
 			FileInputStream testFile = new FileInputStream(testDataFile);
 			testData.load(testFile);
@@ -45,16 +50,7 @@ public Base() throws IOException {
 			inputFile.close();		
 			
 }
-
-//	public void readConfigFile() throws IOException {
-//		File propFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\LumaMagento\\config\\config.properties");
-//		FileInputStream inputFile = new FileInputStream(propFile);
-//		prop.load(inputFile);
-//		//inputFile.close();
-//	}
-	
-		
-			public void addTimestampToEmail() throws IOException {
+	public void addTimestampToEmail() throws IOException {
 
 				Date date =new Date();
 				String timestamp = date.toString().replace(" ","").replace(":","");
@@ -77,38 +73,8 @@ public Base() throws IOException {
 			        
 			}	
 			
-//			public void writeToPropertiesFile(String newEmail) throws IOException {
-//				Properties prop1 = new Properties();
-//			    //Writing to properties file
-//			    prop1.setProperty("newUserEmailAddress", newEmail);
-//			        
-//			        //Saving properties to a file
-//			        OutputStream output = new FileOutputStream(filePath);
-//			        prop1.store(output, "Email updated in properties file successfully");
-//				        output.close();
-//			}
-//			
-//			public void clearDataFromPropertiesFile() {
-//				prop.remove("newUserEmailAddress");
-//				try (FileInputStream input = new FileInputStream(filePath)) {
-//		            prop.load(input);
-//		        } catch (IOException e) {
-//		            e.printStackTrace();
-//		        }
-//
-//		        // Remove the data you want from the properties object
-//		        prop.remove("newUserEmailAddress");
-//
-//		        try (OutputStream output = new FileOutputStream(filePath)) {
-//		            prop.store(output, null);
-//		            System.out.println("Data cleared from config file");
-//		        } catch (IOException e) {
-//		            e.printStackTrace();
-//		        }
-//			}
-
 	
-	public WebDriver launchTheBrowserAndApplication(String browserName) {
+	public static WebDriver launchTheBrowserAndApplication(String browserName) {
 		
 		
 		if(browserName.equalsIgnoreCase("chrome")){
@@ -129,7 +95,7 @@ public Base() throws IOException {
 	}
 	
 
-	public void readCaptcha() throws IOException, Exception {
+	public void readCaptcha() throws IOException, Exception { 
 
 	    WebElement imageElement = driver.findElement(By.xpath("//*[@id='captcha-container-user_login']/div/img"));
 
@@ -166,52 +132,106 @@ public Base() throws IOException {
 	    return resizedImage;
 	}
 
+		
+	public void loginToApplication() throws InterruptedException {
+		TestMethods.linkTextClick(LocatorPages.SignInLink);
+		TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, prop.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
+		TestMethods.xpathClick(LocatorPages.signInButton);
+	    Waits.waitFor3seconds();
+	//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+	//    
 	
-public void loginToApplication() throws InterruptedException {
-	TestMethods.linkTextClick(LocatorPages.SignInLink);
-	TestMethods.enterInputData_ID(LocatorPages.emailTxtBx, prop.getProperty("newUserEmailAddress"));
-	TestMethods.enterInputData_Name(LocatorPages.passwordField, testData.getProperty("password"));
-	TestMethods.xpathClick(LocatorPages.signInButton);
-    Waits.waitFor3seconds();
-//    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-//    
-
-}
-
-public static void testHoverElement(String elementToHever) {
-    // Find the element you want to hover over
-    WebElement ElementToHover = driver.findElement(By.xpath(elementToHever)); 
-    
-    // Create an instance of the Actions class and perform the hover action
-    Actions actions = new Actions(driver);
-    actions.moveToElement(ElementToHover).build().perform();
-
-    // You can add additional actions after the hover if needed, like clicking on a sub-element that appears on hover.
-    // Example: actions.click(subElement).build().perform();
-}
-
-public String validationOfCategory(String locator) {
-	String validationOfCategoryXpath = "(//*[@class='base'][text()='" + locator  + "'])";
-	return validationOfCategoryXpath;
-}
-
-public void sizeXpath(String size) {
-	String xpathOfSize = "//*[@class='swatch-option text'][text() = '"+ size+ "']";
-	TestMethods.xpathClick(xpathOfSize);
-}
-public void colorOfProduct(String color) {
-	String proColor = "//*[@aria-label='"+color+"']";
-	TestMethods.xpathClick(proColor);
+	}
 	
-}
-
-public void goToCart() {
-	TestMethods.xpathClick(cart);
-}
-public void verifyProductAddedToCart(String product, String index) {
-	String proInCart = product + index;
-	System.out.println(proInCart);
-	TestMethods.elementIsDisplayed(proInCart);
+	public static void testHoverElement(String elementToHever) {
+	    // Find the element you want to hover over
+	    WebElement ElementToHover = driver.findElement(By.xpath(elementToHever)); 
+	    
+	    // Create an instance of the Actions class and perform the hover action
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(ElementToHover).build().perform();
+	
+	    // You can add additional actions after the hover if needed, like clicking on a sub-element that appears on hover.
+	    // Example: actions.click(subElement).build().perform();
+	}
+	
+	public static String validationOfCategory(String locator) {
+		String validationOfCategoryXpath = "(//*[@class='base'][text()='" + locator  + "'])";
+		return validationOfCategoryXpath;
+	}
+	
+	public static void sizeXpath(String size) {
+		String xpathOfSize = "//*[@class='swatch-option text'][text() = '"+ size+ "']";
+		TestMethods.xpathClick(xpathOfSize);
+	}
+	public static void colorOfProduct(String color) {
+		String proColor = "//*[@aria-label='"+color+"']";
+		TestMethods.xpathClick(proColor);
+		
+	}
+	
+	public static void goToCart() {
+		TestMethods.xpathClick(cart);
+	}
+	public static void verifyProductAddedToCart(String product, String index) {
+		String proInCart = product + index;
+		System.out.println(proInCart);
+		TestMethods.elementIsDisplayed(proInCart);
+	}
+	public static void proceedToCheckOutFromTop() throws InterruptedException {
+		TestMethods.xpathClick(proceedToCheckoutButtonInTopCart);
+		Waits.waitFor5seconds();
+		TestMethods.elementIsDisplayed(validateShippingAddress);
+	}
+	
+	public void proceedToCheckOut() throws InterruptedException {
+		TestMethods.xpathClick(proceedToCheckoutButtonInTopCart);
+		Waits.waitFor3seconds();
+		TestMethods.elementIsDisplayed(validateShippingAddress);
+	}
+	public static void enterShippingDetails() throws InterruptedException {
+		TestMethods.enterInputData_Xpath(shippingEmail, testData.getProperty("newUserEmailAddress"));
+		TestMethods.enterInputData_Name(fisrtNameField, testData.getProperty("newUserFirstName"));
+		TestMethods.enterInputData_Name(lastNameField, testData.getProperty("newUserLastName"));
+		TestMethods.enterInputData_Name(shippingCompany, testData.getProperty("company"));
+		TestMethods.enterInputData_Xpath(shippingAdd1, testData.getProperty("address1"));
+		TestMethods.enterInputData_Xpath(shippingAdd2, testData.getProperty("address2"));
+		TestMethods.enterInputData_Xpath(shippingAdd3, testData.getProperty("address3"));
+		TestMethods.enterInputData_Xpath(shippingCity, testData.getProperty("city"));
+		//select country and state from drop down
+		TestMethods.xpathClick(shippingCountry);
+		TestMethods.selectOptionFromDropDown(shippingCountry, testData.getProperty("country"));
+		Waits.waitFor3seconds();
+		TestMethods.xpathClick(shippingStateOrProvince);
+		TestMethods.selectOptionFromDropDown(shippingStateOrProvince, testData.getProperty("state"));
+		TestMethods.enterInputData_Xpath(shippingZipcode, testData.getProperty("PostalCode"));
+		TestMethods.enterInputData_Xpath(shippingTelephone, testData.getProperty("PhoneNumber"));
+		
+		
+		
+		
+	}
+	public static void SelectProduct(String product, String Size, String Color) throws InterruptedException {
+		String productLocator = "(//img[contains(@alt,'" + product+"')])";
+		TestMethods.xpathClick(productLocator);
+		Waits.waitFor1seconds();
+		Base.sizeXpath(Size);
+		Base.colorOfProduct(Color);
+		Waits.waitFor2seconds();
+		
+	}
+	public static void addToCart(String locatorOfProductToVerify, String index) throws InterruptedException {
+		String productLocator = "(//img[contains(@alt,'" + locatorOfProductToVerify+"')])";
+		TestMethods.xpathClick(addToCart);
+		Waits.waitFor5seconds();
+		TestMethods.elementIsDisplayed(validateAddToCart);
+		Base.goToCart();
+		Waits.waitFor4seconds();
+		Base.verifyProductAddedToCart(productLocator, index);
+		//Proceed to checkout
+		Base.proceedToCheckOutFromTop();
+		Waits.waitFor5seconds();
 }
 
 }

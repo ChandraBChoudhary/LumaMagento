@@ -2,6 +2,7 @@ package lumaTestCases;
 
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,6 +15,7 @@ import com.LumaMagento.Base.Waits;
 public class SearchProduct extends Base{
 	
 	Base base = new Base();
+	public WebDriver driver;
 	
 	public SearchProduct() throws IOException {
 		//super();

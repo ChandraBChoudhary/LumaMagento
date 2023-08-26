@@ -23,17 +23,17 @@
 		    <groupId>org.testng</groupId>
 		    <artifactId>testng</artifactId>
 		    <version>7.8.0</version>
-		    <scope>test</scope>
+		    <scope>compile</scope>
 		</dependency>
 
  
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.10.0</version>
+    <version>4.11.0</version>
 </dependency>
+
 
 
 		
@@ -43,6 +43,17 @@
 		    <artifactId>tess4j</artifactId>
 		    <version>5.7.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		
+		<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>5.0.9</version>
+		</dependency>
+
+
+
   
   </dependencies>
 </project>
